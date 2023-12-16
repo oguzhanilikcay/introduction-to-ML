@@ -1,0 +1,70 @@
+> machine learning methods
+    > supervised learning:
+        > Supervised Learning is the machine learning approach defined by its use of labeled datasets to train
+        algorithms to classify data and predict outcomes.
+        > {classification, regression}
+    > unsupervised learning:
+        > Unsupervised Learning models can perform more complex tasks than Supervised Learning models, but
+        they are also more unpredictable.
+        > {clustering, association, dimensionality reduction}
+
+
+
+> While you are building a machine learning solution,you should answer, or at least keep
+in mind, the following questions:
+    > What question(s) am I trying to answer? Do I think the data collected can answer
+that question?
+    > What is the best way to phrase my question(s) as a machine learning problem?
+    > Have I collected enough data to represent the problem I want to solve?
+    > What features of the data did I extract, and will these enable the right predictions?
+    > How will I measure success in my application?
+    > How will the machine learning solution interact with other parts of my research or business product?
+
+
+> we cannot use the data we used to build the model to evaluate it. This
+is because our model can always simply remember the whole training set, and will
+therefore always predict the correct label for any point in the training set
+
+
+> Overfitting occurs when you fit a model too closely to the particularities of the training set and
+obtain a model that works well on the training set but is not able to generalize to new data
+
+> Never underestimate the power of more data :)
+
+> The R-square score, also known as the 'coefficient of determination', is a measure
+of goodness of a prediction for a regression model, and yields a score between 0 and 1.
+
+> ŷ = w[0] * x[0] + w[1] * x[1] + ... + w[p] * x[p] + b
+    > Here, x[0] to x[p] denotes the features (in this example, the number of features is p)
+of a single data point, w and b are parameters of the model that are learned, and ŷ is
+the prediction the model makes.
+    > For a dataset with a single feature, this is: ŷ = w[0] * x[0] + b
+
+
+> Linear Regression:
+    > Linear regression, or 'ordinary least squares (OLS)', is the simplest and most classic linear
+method for regression. Linear regression finds the parameters w and b that minimize the
+'mean squared error' between predictions and the true regression targets, y,on the training set.
+The mean squared error is the sum of the squared differences between the predictions and
+the true values. Linear regression has no parameters, which is a benefit, but it also has
+no way to control model complexity.
+
+    ?> lr.coef_
+    ?> lr.intercept_
+
+> with higher-dimensional datasets (meaning datasets with a large number of features),
+linear models become more powerful, and there is a higher chance of overfitting.
+
+
+> underfitting R-square example:
+    Training set score: 0.67
+    Test set score: 0.66
+
+> overfitting R-square example:
+    Training set score: 0.95
+    Test set score: 0.61
+
+
+? regularization
+
+> A less complex model means worse performance on the training set, but better generalization
