@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import mglearn
 from sklearn.model_selection import train_test_split
 
-# Linear Regression
+#       < Linear Models >
 X, y = mglearn.datasets.make_wave(n_samples=60)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, random_state=60
@@ -66,24 +66,24 @@ for alpha in alphas:
     ridge_v2 = Ridge(alpha=alpha)
     ridge_v2.fit(X_train, y_train)
     print("--" * 5)
-    print("alpha value: {}".format(alpha))
-    print(np.round(ridge_v2.score(X_train, y_train), 2))
-    print(np.round(ridge_v2.score(X_test, y_test), 2))
+    print("alpha value = {}".format(alpha))
+    print("train score: {:.2f}".format(ridge_v2.score(X_train, y_train)))
+    print("test score: {:.2f}".format(ridge_v2.score(X_test, y_test)))
 
 
-r1 = Ridge(alpha=0.1)
-r1.fit(X_train, y_train)
+ridge1 = Ridge(alpha=0.1)
+ridge1.fit(X_train, y_train)
 
-r2 = Ridge(alpha=1)
-r2.fit(X_train, y_train)
+ridge2 = Ridge(alpha=1)
+ridge2.fit(X_train, y_train)
 
-r3 = Ridge(alpha=10)
-r3.fit(X_train, y_train)
+ridge3 = Ridge(alpha=10)
+ridge3.fit(X_train, y_train)
 
 
-plt.plot(r1.coef_, 's', label='alpha=0.1')
-plt.plot(r2.coef_, '^', label='alpha=1.0')
-plt.plot(r3.coef_, 'v', label='alpha=10.0')
+plt.plot(ridge1.coef_, 's', label='alpha=0.1')
+plt.plot(ridge2.coef_, '^', label='alpha=1.0')
+plt.plot(ridge3.coef_, 'v', label='alpha=10.0')
 
 plt.plot(lr.coef_, 'o', label='Linear Regression')
 plt.xlabel('coefficient index')
@@ -96,6 +96,50 @@ plt.show()
 
 
 
+#   Lasso
+from sklearn.linear_model import Lasso
+lasso = Lasso()
+lasso.fit(X_train, y_train)
+
+print("train score (lasso): {:.2f}".format(lasso.score(X_train, y_train)))
+print("test score (lasso): {:.2f}".format(lasso.score(X_test, y_test)))
+print("number of features used: {}".format(np.sum(lasso.coef_ != 0)))
+
+
+# Lasso with params
+lasso1 = Lasso(alpha=0.01, max_iter=100000)
+lasso1.fit(X_train, y_train)
+
+print("train score (lasso1): {:.2f}".format(lasso1.score(X_train, y_train)))
+print("test score (lasso1): {:.2f}".format(lasso1.score(X_test, y_test)))
+print("number of features used: {:.2f}".format(np.sum(lasso1.coef_ != 0)))
+
+''' A lower alpha allowed us to fit more complex model '''
+
+
+# comparison
+plt.plot(lasso.coef_, 's', label='Lasso alpha=1')
+plt.plot(lasso1.coef_, 'o', label='Lasso alpha=0.01')
+plt.plot(ridge1.coef_, '^', label='Ridge alpha= 0.1')
+
+plt.legend(ncol=2, loc=(0, 1.05))
+plt.ylim(-25, 25)
+plt.xlabel('coefficient index')
+plt.ylabel('coefficient magnitude')
+
+plt.show()
 
 
 
+'''
+     y = w[0] * x[0] + ... + w[p] * x[p] + b
+        > p is the number of features
+        > w, b are parameters of the modeol that are learned
+        > w also called coefficient. it is stored in the 'coef_' attribute
+        > b also called intercept. it is stored in the 'intercept_' attribute
+        > y is the prediction the model makes
+
+> we want the magnitude of coefficients to be as small as possible.
+> regularization means explicitly restricting a model to avoid overfitting.
+
+'''

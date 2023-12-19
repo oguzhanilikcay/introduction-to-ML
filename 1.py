@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import mglearn
 
-#
+# < / >
 X, y = mglearn.datasets.make_forge()
 print('>X.shape: {}'.format(X.shape))
 
@@ -28,12 +28,9 @@ plt.show()
 from sklearn.datasets import load_breast_cancer
 cancer = load_breast_cancer()
 print(">Cancer.keys(): \n{}".format(cancer.keys()))
-
 print(">Shape of cancer data: {}".format(cancer.data.shape))
-
 print(">Sample counts per class:\n{}".format(
     {n: v for n, v in zip(cancer.target_names, np.bincount(cancer.target))}))
-
 print(">Feature names:\n{}".format(cancer.feature_names))
 
 
@@ -59,6 +56,7 @@ print(">Test set accuracy:\n{}".format(score))
 
 ''' analyzing KNeighborsClassifier'''
 fig, axes = plt.subplots(1, 3, figsize=(5, 5))
+
 for n_neighbors, ax in zip([1, 3, 5], axes):
     knn = KNeighborsClassifier(n_neighbors=n_neighbors).fit(X, y)
     mglearn.plots.plot_2d_separator(knn, X, fill=True, eps=0.5, ax=ax, alpha=0.4)
@@ -66,6 +64,7 @@ for n_neighbors, ax in zip([1, 3, 5], axes):
     ax.set_title("{} neighbors(s)".format(n_neighbors))
     ax.set_xlabel("feature 0")
     ax.set_ylabel("feature 1")
+
 axes[0].legend(loc=3)
 
 plt.show()
@@ -112,21 +111,22 @@ y_pred = reg.predict(X_test)
 print(">Test set prediction:\n{}".format(y_pred))
 
 score = reg.score(X_test, y_test)
-print(">Test set R-square: {}".format(score))
+print(">Test set R-square: {:.2f}".format(score))
 
 
 ''' analyzing KNeighborsRegressor'''
 fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 line = np.linspace(-3, 3, 1000).reshape(-1, 1)  # create 1000 data points, evenly spaces between -3 and 3
 
-for n_neighbors, ax in zip([1, 3, 7], axes):
+for n_neighbors, ax in zip([1, 3, 9], axes):
     reg = KNeighborsRegressor(n_neighbors=n_neighbors)
     reg.fit(X_train, y_train)
+    ax.plot(line, reg.predict(line))
     ax.plot(X_train, y_train, '^', c=mglearn.cm2(0), markersize=8)
     ax.plot(X_test, y_test, 'v', c=mglearn.cm2(1), markersize=8)
 
     ax.set_title(
-        "{} neighbor(s)\n train score: {:.2f} test score: {:.2f}".format(
+        "n={}\n train: {:.2f} test: {:.2f}".format(
             n_neighbors, reg.score(X_train, y_train),
             reg.score(X_test, y_test)
         )
@@ -137,13 +137,3 @@ for n_neighbors, ax in zip([1, 3, 7], axes):
 axes[0].legend(['Model prediction', 'Training data/target', 'Test data/target'], loc='best')
 
 plt.show()
-
-
-
-
-
-
-
-
-
-

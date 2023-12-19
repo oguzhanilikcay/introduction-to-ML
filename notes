@@ -49,8 +49,10 @@ The mean squared error is the sum of the squared differences between the predict
 the true values. Linear regression has no parameters, which is a benefit, but it also has
 no way to control model complexity.
 
-    ?> lr.coef_
-    ?> lr.intercept_
+    > lr.coef_ :
+        > modelin bagimsiz degiskenlerinin katsayisi
+    > lr.intercept_ :
+        > modelin sabit terimi
 
 > with higher-dimensional datasets (meaning datasets with a large number of features),
 linear models become more powerful, and there is a higher chance of overfitting.
@@ -65,6 +67,63 @@ linear models become more powerful, and there is a higher chance of overfitting.
     Test set score: 0.61
 
 
-? regularization
+? (regularization)
 
 > A less complex model means worse performance on the training set, but better generalization
+
+> L1 regularization:
+    > Lasso (Least Absolute Shrinkage and Selection Operator)
+    > bazi katsayilari tamamen sifira indirme egilimindedir
+    > gereksiz veya zayif ozellikleri eler.
+> L2 regularization:
+    > Ridge
+    > buyuk katsayilara karsi daha toleranslidir
+    > katsayilari kucultme egilimindedir
+> Elastic Net:
+    > L1 ve L2 regularization birlikte kullanimi
+
+
+
+> Loss Functions
+    > The loss function is a method of evaluating how ell your ML algorithm models your
+    featured data set.
+    > Loss functions are a measurement of how good your model is in terms of predicting
+    the expected outcome.
+
+    > 1 - Binary Cross-Entropy Loss / Log Loss
+        >
+
+
+    > 2 - Hinge Loss
+        >
+
+
+
+> the trade-off parameter that determines the strength of the regularization is called "C"
+and higher values of C correspond to less regularization. when you use a high value for
+the parameter C LogisticRegression and LinearSVC try to fit the training set as best as possible
+
+
+
+            < ? loss functions >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
