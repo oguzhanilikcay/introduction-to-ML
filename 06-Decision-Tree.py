@@ -1,8 +1,5 @@
-import xdrlib
-
 import numpy as np
 import matplotlib.pyplot as plt
-import mglearn
 import pandas as pd
 
 
@@ -10,20 +7,19 @@ import pandas as pd
 from sklearn.datasets import load_breast_cancer
 cancer = load_breast_cancer()
 
-
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
     cancer.data, cancer.target, stratify=cancer.target, random_state=42
 )
 
 from sklearn.tree import DecisionTreeClassifier
-dtc = DecisionTreeClassifier(max_depth=4)
+dtc = DecisionTreeClassifier(max_depth=4, random_state=0)
 dtc.fit(X_train, y_train)
 ''' limiting the depth of the tree decreases overfitting. this leads to a lower accuray on the training set, but an
 improvement on the test set'''
 
 print("train set accuracy: {:.3f}".format(dtc.score(X_train, y_train)))
-print("test set accuracy: {}".format(dtc.score(X_test, y_test)))
+print("test set accuracy: {:.3f}".format(dtc.score(X_test, y_test)))
 
 
 # analyzing decision trees
@@ -32,29 +28,32 @@ export_graphviz(dtc, out_file='dtc.dot', class_names=['malignant', 'benign'],
                 feature_names=cancer.feature_names, impurity=False, filled=True)
 
 
+# visulize the tree
 import graphviz
 with open('dtc.dot') as f:
     dot_graph = f.read()
 
 graphviz.Source(dot_graph)
-''' dot -Tpng dtc.dot -o dtc.png '''
+''' console command:>> dot -Tpng dtc.dot -o dtc.png '''
 
 print("Feature importances:\n{}".format(dtc.feature_importances_))
 
 
+# visualize the coefficients
 def plot_feature_importances_cancer(model):
     n_features = cancer.data.shape[1]
     plt.barh(range(n_features), model.feature_importances_, align='center')
     plt.yticks(np.arange(n_features), cancer.feature_names)
     plt.xlabel('Feature importance')
     plt.ylabel('Feature')
+    plt.title('Feature importance table')
     plt.show()
 
 
 plot_feature_importances_cancer(dtc)
 
 
-#
+# dataset - ram_prices
 ram_prices = pd.read_csv('ram_price.csv')
 print(ram_prices.head())
 
@@ -67,7 +66,6 @@ plt.show()
 
 data_train = ram_prices[ram_prices.date < 2000]
 data_test = ram_prices[ram_prices.date >= 2000]
-
 
 X_train = data_train['date'].to_numpy()
 y_train = np.log(data_train.price).to_numpy()
@@ -102,15 +100,9 @@ plt.legend()
 
 plt.show()
 
+''' Decison Tree Regressor (and all other tree-based regression models) is not able to extrapolate, or make
+predictions outside of the training data. That means the tree has no ability to generate "new" responses
+outside of what was seen in the training data.
 
-
-
-
-
-
-
-
-
-
-
-
+The possible splits of the data dont depend on scaling, no preprocessing like normalization or standardization
+of features is needed for decision tree algorithms.'''

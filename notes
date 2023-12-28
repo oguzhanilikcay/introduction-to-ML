@@ -113,6 +113,9 @@ the parameter C LogisticRegression and LinearSVC try to fit the training set as 
 
 
 
+> "rectified linear unit (relu)"
+>
+
 
 
 

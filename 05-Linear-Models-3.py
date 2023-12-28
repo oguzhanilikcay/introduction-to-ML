@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import mglearn
-from sklearn.model_selection import train_test_split
 
 
 # Linear models for multiclass classification
@@ -20,7 +19,7 @@ model = LinearSVC()
 model.fit(X, y)
 
 print('Coefficient Shape:\n', model.coef_)
-print('Intercept Shape: ', model.intercept_)
+print('Intercept Shape:', model.intercept_)
 
 mglearn.discrete_scatter(X[:, 0], X[:, 1], y)
 line = np.linspace(-15, 15)
@@ -55,13 +54,17 @@ plt.ylabel('Feature 1')
 plt.show()
 
 
+# Naive Bayes
+X = np.array([
+    [0, 1, 0, 1],
+    [1, 0, 1, 1],
+    [0, 0, 0, 1],
+    [1, 0, 1, 0]])
 
+y = np.array([0, 1, 0, 1])
 
+counts = {}
 
-
-
-
-
-
-
-
+for label in np.unique(y):
+    counts[label] = X[y == label].sum(axis=0)
+print("Feature counts:\n{}".format(counts))
