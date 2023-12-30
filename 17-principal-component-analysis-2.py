@@ -19,10 +19,11 @@ print("original shape: {}".format(str(X_scaled.shape)))
 print("reduced shape: {}".format(str(X_pca.shape)))
 
 
-plt.figure(figsize=(8, 8))
-
+#
 import mglearn
 mglearn.discrete_scatter(X_pca[:, 0], X_pca[:, 1], cancer.target)
+
+plt.figure(figsize=(8, 10))
 
 plt.legend(cancer.target_names, loc='best')
 plt.xlabel('first principal component')
@@ -34,6 +35,7 @@ plt.show()
 print("PCA component shape: {}".format(pca.components_.shape))
 print("PCA components:\n{}".format(pca.components_))
 
+# visualize the coefficients
 plt.matshow(pca.components_, cmap='viridis')
 plt.yticks([0, 1], ['first component', 'second component'])
 plt.colorbar()
