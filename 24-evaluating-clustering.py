@@ -69,8 +69,8 @@ X_scaled = sc1.transform(X)
 random_state = np.random.RandomState(seed=0)
 random_clusters = random_state.randint(low=0, high=2, size=len(X))
 
-fig, axes = plt.subplots(1, 4, figsize=(15, 3), subplot_kw={'xticks': (), 'yticks': ()})
 
+fig, axes = plt.subplots(1, 4, figsize=(15, 3), subplot_kw={'xticks': (), 'yticks': ()})
 axes[0].scatter(X_scaled[:, 0], X_scaled[:, 1], c=random_clusters, s=60)
 axes[0].set_title("Random assignment: {:.2f}".format(
     silhouette_score(X_scaled, random_clusters)))
@@ -88,5 +88,3 @@ for ax, algorithm in zip(axes[1:], algorithms):
         algorithm.__class__.__name__, silhouette_score(X_scaled, clusters)))
 
 plt.show()
-
-
