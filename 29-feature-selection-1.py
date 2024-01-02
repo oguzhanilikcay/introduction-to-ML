@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 #
 # Univariate Statistics
 #
-
 
 from sklearn.datasets import load_breast_cancer
 cancer = load_breast_cancer()
@@ -51,11 +49,9 @@ logr.fit(X_train_selected, y_train)
 score_selected = logr.score(X_test_selected, y_test)
 print("score with only selected features: {:.3f}".format(score_selected))
 
-
 #
 # Model-Based Feature Selection
 #
-
 
 from sklearn.feature_selection import SelectFromModel
 from sklearn.ensemble import RandomForestClassifier
@@ -85,11 +81,9 @@ logr.fit(X_train_l1, y_train)
 score = logr.score(X_test_l1, y_test)
 print("test score: {:.3f}".format(score))
 
-
 #
 # Iterative Feature Selection
 #
-
 
 from sklearn.feature_selection import RFE
 select = RFE(

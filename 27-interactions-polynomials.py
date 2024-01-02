@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 data = pd.read_csv('csv-files/boston_house_prices.csv')
 
 X = data.iloc[:, 0:13].to_numpy()

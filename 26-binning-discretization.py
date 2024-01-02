@@ -15,7 +15,6 @@ from sklearn.linear_model import LinearRegression
 lr = LinearRegression()
 lr.fit(X, y)
 
-
 plt.plot(line, dtr.predict(line), label='decision tree regression')
 plt.plot(line, lr.predict(line), label='linear regression')
 plt.plot(X[:, 0], y, 'o', c='k')
