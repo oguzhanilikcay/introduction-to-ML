@@ -15,7 +15,7 @@ logr0 = LogisticRegression()
 logr0.fit(X_train, y_train)
 
 score = logr0.score(X_test, y_test)
-print("1test score: {:.2f}".format(score))
+print("test score: {:.2f}".format(score))
 
 
 #
@@ -26,15 +26,15 @@ logr = LogisticRegression(max_iter=200)
 
 from sklearn.model_selection import cross_val_score
 scores = cross_val_score(logr, iris.data, iris.target, cv=5)
-print("2cross-validation scores: {}".format(scores))
-print("3average cross-validation score: {:.2f}".format(scores.mean()))
+print("cross-validation scores: {}".format(scores))
+print("average cross-validation score: {:.2f}".format(scores.mean()))
 
 #
 # stratified k-fold cross-validation
 #
 
 iris = load_iris()
-print("4Iris labels:\n{}".format(iris.target))
+print("Iris labels:\n{}".format(iris.target))
 
 mglearn.plots.plot_stratified_cross_validation()
 plt.show()
@@ -45,11 +45,11 @@ plt.show()
 
 from sklearn.model_selection import KFold
 kfold = KFold(n_splits=3)  # !
-print("5cross-validation scores:\n{}".format(
+print("cross-validation scores:\n{}".format(
     cross_val_score(logr, iris.data, iris.target, cv=kfold)))
 
 kfold = KFold(n_splits=3, shuffle=True, random_state=0)
-print("6cross-validation scores:\n{}".format(
+print("cross-validation scores:\n{}".format(
     cross_val_score(logr, iris.data, iris.target, cv=kfold)))
 
 #
@@ -59,8 +59,8 @@ print("6cross-validation scores:\n{}".format(
 from sklearn.model_selection import LeaveOneOut
 loo = LeaveOneOut()
 scores = cross_val_score(logr, iris.data, iris.target, cv=loo)
-print("7number of iterations: ", len(scores))
-print("8mean accuracy: {:.2f}".format(scores.mean()))
+print("number of iterations: ", len(scores))
+print("mean accuracy: {:.2f}".format(scores.mean()))
 
 #
 # shuffle-split cross-validation
@@ -72,7 +72,7 @@ plt.show()
 from sklearn.model_selection import ShuffleSplit
 shuffle_split = ShuffleSplit(test_size=0.5, train_size=0.5, n_splits=10)
 scores = cross_val_score(logr, iris.data, iris.target, cv=shuffle_split)
-print("9cross-validation scores:\n{}".format(scores))
+print("cross-validation scores:\n{}".format(scores))
 
 #
 # group-k-fold
@@ -83,7 +83,7 @@ groups = [0, 0, 0, 1, 1, 1, 1, 2, 2, 3, 3, 3]
 
 from sklearn.model_selection import GroupKFold
 scores = cross_val_score(logr, X, y, groups=groups, cv=GroupKFold(n_splits=3))
-print("10cross-validation scores:\n{}".format(scores))
+print("cross-validation scores:\n{}".format(scores))
 
 mglearn.plots.plot_group_kfold()
 plt.show()

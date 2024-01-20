@@ -25,14 +25,16 @@ c_report = classification_report(y_test, y_pred)
 print("classification_report:\n{}".format(c_report))
 
 y_pred_lower_threshold = svm.decision_function(X_test) > -0.8
-print("classification_report:\n{}".format(classification_report(y_test, y_pred_lower_threshold)))
+c_report_threshold = classification_report(y_test, y_pred_lower_threshold)
+print("classification_report (with threshold):\n{}".format(c_report_threshold))
+
+print("---"*24)
 
 '''
 let's assume in our application it is more important to have a high recall for class 1.
 this means we are willing to risk more false positives (false class 1) in exchance for more
 true positives (which will increase the recall).
 '''
-print("---"*24)
 
 #
 # precision, recall, threshold | ROC - AUC
@@ -101,6 +103,15 @@ plt.show()
 from sklearn.metrics import f1_score
 print("f1 - svc: {:.3f}".format(f1_score(y_test, svc.predict(X_test))))
 print("f1 - rfc: {:.3f}".format(f1_score(y_test, rfc.predict(X_test))))
+
+
+from sklearn.metrics import average_precision_score
+aps_svc = average_precision_score(y_test, svc.decision_function(X_test))
+aps_rfc = average_precision_score(y_test, rfc.predict_proba(X_test)[:, 1])
+
+print("average precision - svc: {:.3f}".format(aps_svc))
+print("average precision - rfc: {:.3f}".format(aps_rfc))
+''' average precision is the area under a curve that goes from 0 to 1. '''
 
 
 from sklearn.metrics import roc_curve
