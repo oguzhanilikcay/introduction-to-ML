@@ -1,0 +1,8 @@
+train set accuracy(non parameter): 1.000
+test set accuracy(non parameter): 0.965
+train set accuracy(max_depth=1): 0.991
+test set accuracy(max_depth=1): 0.972
+train set accuracy(learning_rate=0.01): 0.988
+test set accuracy(learning_rate=0.01) : 0.965
+
+Process finished with exit code 0

@@ -1,0 +1,18 @@
+X_train.shape: (284, 80)
+X_train_selected.shape (284, 40)
+[ True  True  True  True  True  True  True  True  True False  True False
+  True  True  True  True  True  True False False  True  True  True  True
+  True  True  True  True  True  True False False False  True False  True
+ False False  True False False False False  True False False  True False
+ False  True False  True False False False False False False  True False
+  True False False False False  True False  True False False False False
+  True  True False  True False False False False]
+score with all features: 0.926
+score with only selected features: 0.933
+X_train.shape: (284, 80)
+X_train_l1.shape: (284, 40)
+test score: 0.933
+test score: 0.930
+rfe.score: 0.951
+
+Process finished with exit code 0

@@ -1,0 +1,56 @@
+unique predicted label: [False]
+test score: 0.90
+test score tree: 0.92
+dummy score: 0.90
+logr score: 0.98
+confusion matrix:
+[[402   1]
+ [  6  41]]
+most frequent class:
+ [[403   0]
+ [ 47   0]]
+dummy model:
+ [[403   0]
+ [ 47   0]]
+decision tree:
+ [[390  13]
+ [ 24  23]]
+logistic regression:
+ [[402   1]
+ [  6  41]]
+f1 score most frequent: 0.00
+f1 score dummy model: 0.00
+f1 score decision tree: 0.55
+f1 score logr: 0.92
+> classification report:
+              precision    recall  f1-score   support
+
+    not nine       0.90      1.00      0.94       403
+        nine       1.00      0.00      0.00        47
+
+    accuracy                           0.90       450
+   macro avg       0.95      0.50      0.47       450
+weighted avg       0.91      0.90      0.85       450
+
+> classfication report (dummy):
+              precision    recall  f1-score   support
+
+    not nine       0.90      1.00      0.94       403
+        nine       1.00      0.00      0.00        47
+
+    accuracy                           0.90       450
+   macro avg       0.95      0.50      0.47       450
+weighted avg       0.91      0.90      0.85       450
+
+> classification report (logr):
+              precision    recall  f1-score   support
+
+    not nine       0.99      1.00      0.99       403
+        nine       0.98      0.87      0.92        47
+
+    accuracy                           0.98       450
+   macro avg       0.98      0.93      0.96       450
+weighted avg       0.98      0.98      0.98       450
+
+
+Process finished with exit code 0

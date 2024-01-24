@@ -1,0 +1,9 @@
+Coefficient Shape:
+ [[-0.1749241   0.23140974]
+ [ 0.47621173 -0.06937548]
+ [-0.18913869 -0.20400548]]
+Intercept Shape: [-1.07745053  0.13140422 -0.08604935]
+Feature counts:
+{0: array([0, 1, 0, 2]), 1: array([2, 0, 2, 1])}
+
+Process finished with exit code 0

@@ -1,0 +1,29 @@
+classification_report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.89      0.93       104
+           1       0.35      0.67      0.46         9
+
+    accuracy                           0.88       113
+   macro avg       0.66      0.78      0.70       113
+weighted avg       0.92      0.88      0.89       113
+
+classification_report (with threshold):
+              precision    recall  f1-score   support
+
+           0       1.00      0.82      0.90       104
+           1       0.32      1.00      0.49         9
+
+    accuracy                           0.83       113
+   macro avg       0.66      0.91      0.69       113
+weighted avg       0.95      0.83      0.87       113
+
+------------------------------------------------------------------------
+f1 - svc: 0.656
+f1 - rfc: 0.610
+average precision - svc: 0.666
+average precision - rfc: 0.660
+AUC for rfc: 0.94
+AUC for svc: 0.92
+
+Process finished with exit code 0

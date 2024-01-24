@@ -1,0 +1,23 @@
+> data first 5 rows:
+   SquareFeet  Bedrooms  Bathrooms Neighborhood  YearBuilt          Price
+0        2126         4          1        Rural       1969  215355.283618
+1        2459         3          2        Rural       1980  195014.221626
+2        1860         2          1       Suburb       1970  306891.012076
+3        2294         2          1        Urban       1996  206786.787153
+4        2130         5          2       Suburb       2001  272436.239065
+> column names:
+['SquareFeet', 'Bedrooms', 'Bathrooms', 'Neighborhood', 'YearBuilt', 'Price']
+> data_dummies view:
+    Neighborhood_Rural  Neighborhood_Suburb  Neighborhood_Urban
+0                True                False               False
+1                True                False               False
+2               False                 True               False
+3               False                False                True
+4               False                 True               False
+> data_dummies column names:
+ ['SquareFeet', 'Bedrooms', 'Bathrooms', 'YearBuilt', 'Price', 'Neighborhood_Rural', 'Neighborhood_Suburb', 'Neighborhood_Urban']
+X.shape: (10001, 7) , y.shape: (10001,)
+train score: 0.55
+test score: 0.58
+
+Process finished with exit code 0

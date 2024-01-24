@@ -85,7 +85,7 @@ linear models become more powerful, and there is a higher chance of overfitting.
 
 
 > Loss Functions
-    > The loss function is a method of evaluating how ell your ML algorithm models your
+    > The loss function is a method of evaluating how well your ML algorithm models your
     featured data set.
     > Loss functions are a measurement of how good your model is in terms of predicting
     the expected outcome.

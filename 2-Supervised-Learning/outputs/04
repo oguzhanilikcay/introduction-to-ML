@@ -1,0 +1,25 @@
+train score (logr): 0.95775
+test score (logr): 0.95804
+-----------------------------------
+C:0.01
+train score: 0.953
+test score: 0.951
+-----------------------------------
+C:1
+train score: 0.958
+test score: 0.958
+-----------------------------------
+C:100
+train score: 0.984
+test score: 0.965
+****************************************
+train accuracy (l1 logr) with C=0.001: 0.91
+test accuracy (l1 logr) with C=0.001: 0.92
+****************************************
+train accuracy (l1 logr) with C=1: 0.96
+test accuracy (l1 logr) with C=1: 0.96
+****************************************
+train accuracy (l1 logr) with C=100: 0.99
+test accuracy (l1 logr) with C=100: 0.98
+
+Process finished with exit code 0

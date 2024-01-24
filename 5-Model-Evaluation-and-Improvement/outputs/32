@@ -1,0 +1,54 @@
+size of training set: 112
+size of test set: 38
+best score: 0.97
+best parameters: {'C': 100, 'gamma': 0.001}
+size of training set: 84
+size of validation set: 28
+size of test set: 38
+best score on validation set: 0.96
+best parameters: {'C': 10, 'gamma': 0.001}
+test set score with best parameters: 0.92
+> test set score: 0.97
+> best parameters: {'C': 10, 'gamma': 0.1}
+> best cross-validation score: 0.97
+> combination of parameters: {'C': [0.001, 0.01, 0.1, 1, 10, 100], 'gamma': [0.001, 0.01, 0.1, 1, 10, 100]}
+> best estimator: SVC(C=10, gamma=0.1)
+    mean_fit_time  std_fit_time  ...  std_test_score  rank_test_score
+31       0.000550      0.000019  ...        0.032761                2
+32       0.000535      0.000014  ...        0.049799                7
+33       0.000665      0.000015  ...        0.044708                9
+34       0.000914      0.000022  ...        0.063488               14
+35       0.001006      0.000023  ...        0.058964               19
+
+[5 rows x 15 columns]
+column names: ['mean_fit_time', 'std_fit_time', 'mean_score_time', 'std_score_time', 'param_C', 'param_gamma', 'params', 'split0_test_score', 'split1_test_score', 'split2_test_score', 'split3_test_score', 'split4_test_score', 'mean_test_score', 'std_test_score', 'rank_test_score']
+> list of grids:
+[{'kernel': ['rbf'], 'C': [0.001, 0.01, 0.1, 1, 10, 100], 'gamma': [0.001, 0.01, 0.1, 1, 10, 100]}, {'kernel': ['linear'], 'C': [0.001, 0.01, 0.1, 1, 10, 100]}]
+> best parameters: {'C': 10, 'gamma': 0.1, 'kernel': 'rbf'}
+> best cross-validation score: 0.97
+> cv_results_:
+                                                              0   ...                              41
+mean_fit_time                                           0.001291  ...                        0.000588
+std_fit_time                                            0.000369  ...                        0.000026
+mean_score_time                                         0.000705  ...                        0.000369
+std_score_time                                          0.000206  ...                        0.000023
+param_C                                                    0.001  ...                             100
+param_gamma                                                0.001  ...                             NaN
+param_kernel                                                 rbf  ...                          linear
+params             {'C': 0.001, 'gamma': 0.001, 'kernel': 'rbf'}  ...  {'C': 100, 'kernel': 'linear'}
+split0_test_score                                       0.347826  ...                        0.956522
+split1_test_score                                       0.347826  ...                        0.956522
+split2_test_score                                       0.363636  ...                             1.0
+split3_test_score                                       0.363636  ...                        0.909091
+split4_test_score                                       0.409091  ...                        0.954545
+mean_test_score                                         0.366403  ...                        0.955336
+std_test_score                                          0.022485  ...                        0.028764
+rank_test_score                                               27  ...                               8
+
+[16 rows x 42 columns]
+cross-validation score:  [0.96666667 1.         0.9        0.96666667 1.        ]
+mean cross-validation score:  0.9666666666666668
+------------------------------------------------------------------------------------------
+cross-validation scores: [0.96666667 1.         0.96666667 0.96666667 1.        ]
+
+Process finished with exit code 0

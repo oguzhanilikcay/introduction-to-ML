@@ -1,0 +1,58 @@
+<gamma = 1.00> <accuracy = 0.90> <AUC = 0.50>
+<gamma = 0.05> <accuracy = 0.90> <AUC = 1.00>
+<gamma = 0.01> <accuracy = 0.90> <AUC = 1.00>
+accuracy: 0.951
+confusion matrix:
+[[37  0  0  0  0  0  0  0  0  0]
+ [ 0 40  0  0  0  0  0  0  2  1]
+ [ 0  1 40  3  0  0  0  0  0  0]
+ [ 0  0  0 43  0  0  0  0  1  1]
+ [ 0  0  0  0 37  0  0  1  0  0]
+ [ 0  0  0  0  0 46  0  0  0  2]
+ [ 0  1  0  0  0  0 51  0  0  0]
+ [ 0  0  0  1  1  0  0 46  0  0]
+ [ 0  3  1  0  0  0  0  0 43  1]
+ [ 0  0  0  0  0  1  0  0  1 45]]
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        37
+           1       0.89      0.93      0.91        43
+           2       0.98      0.91      0.94        44
+           3       0.91      0.96      0.93        45
+           4       0.97      0.97      0.97        38
+           5       0.98      0.96      0.97        48
+           6       1.00      0.98      0.99        52
+           7       0.98      0.96      0.97        48
+           8       0.91      0.90      0.91        48
+           9       0.90      0.96      0.93        47
+
+    accuracy                           0.95       450
+   macro avg       0.95      0.95      0.95       450
+weighted avg       0.95      0.95      0.95       450
+
+f1 score - micro average: 0.9511
+f1 score - macro average: 0.9519
+default scoring: [0.975      0.99166667 1.         0.99442897 0.98050139]
+explicit accuracy scoring: [0.975      0.99166667 1.         0.99442897 0.98050139]
+AUC scoring: [0.99717078 0.99854252 1.         0.999828   0.98400413]
+X_train:
+[[ 0.  3. 13. ... 12.  9.  1.]
+ [ 0.  0.  1. ... 13.  1.  0.]
+ [ 0.  0.  4. ...  9.  0.  0.]
+ ...
+ [ 0.  0.  5. ...  0.  0.  0.]
+ [ 0.  0.  4. ...  0.  0.  0.]
+ [ 0.  0.  6. ... 11.  0.  0.]]
+target == 9: [False False False ... False  True False]
+<<<  grid-search with accuracy  >>>
+best parameters:  {'gamma': 0.0001}
+best cross-validation score(accuracy): 0.976
+test set AUC: 0.992
+test set accuracy: 0.973
+<<<  grid-search with AUC  >>>
+best parameters: {'gamma': 0.01}
+best cross-validation score(AUC): 0.998
+test set AUC: 1.000
+test set accuracy: 1.000
+
+Process finished with exit code 0

@@ -1,0 +1,37 @@
+X_train_scaled:
+[[0.23044157 0.32157676 0.21940433 ... 0.31484671 0.30277942 0.09858323]
+ [0.20062473 0.42116183 0.19452699 ... 0.06965208 0.34042973 0.06677161]
+ [0.62232003 0.76929461 0.60403566 ... 0.56079917 0.19850187 0.07431457]
+ ...
+ [0.11619102 0.35726141 0.11077327 ... 0.17402687 0.17524147 0.17263545]
+ [0.12963226 0.35311203 0.11706171 ... 0.         0.06780997 0.06919848]
+ [0.21434995 0.59004149 0.21235575 ... 0.33251808 0.10782574 0.21172767]]
+test score: 0.97
+best cross-validation accuracy: 0.98
+best test score: 0.97
+best parameters:  {'C': 1, 'gamma': 1}
+test score: 0.97
+best cross-validation accuracy: 0.98
+test set score: 0.97
+best parameters: {'svm__C': 1, 'svm__gamma': 1}
+X_selected.shape: (100, 500)
+mean cross-validation score (cv only on ridge): 0.91
+mean cross-validation score (pipeline): -0.25
+pipe_short steps:
+[('minmaxscaler', MinMaxScaler()), ('svc', SVC(C=100))]
+pipeline steps:
+[('standardscaler-1', StandardScaler()), ('pca', PCA(n_components=2)), ('standardscaler-2', StandardScaler())]
+components.shape: (2, 30)
+best estimator:
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression', LogisticRegression(C=1))])
+logistic regression step:
+LogisticRegression(C=1)
+logistic regression coefficients:
+[[-0.43570655 -0.34266946 -0.40809443 -0.5344574  -0.14971847  0.61034122
+  -0.72634347 -0.78538827  0.03886087  0.27497198 -1.29780109  0.04926005
+  -0.67336941 -0.93447426 -0.13939555  0.45032641 -0.13009864 -0.10144273
+   0.43432027  0.71596578 -1.09068862 -1.09463976 -0.85183755 -1.06406198
+  -0.74316099  0.07252425 -0.82323903 -0.65321239 -0.64379499 -0.42026013]]
+
+Process finished with exit code 0

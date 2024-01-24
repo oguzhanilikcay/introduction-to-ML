@@ -1,0 +1,13 @@
+(87, 65)
+people.images.shape: (876, 87, 65)
+number of classes: 7
+people.images.shape: (876, 87, 65)
+number of classes: 7
+Bill Clinton               29   Donald Rumsfeld           121   George W Bush             530
+Gerhard Schroeder         109   Gloria Macapagal Arroyo    44   Igor Ivanov                20
+Tiger Woods                23
+> test set score of n=1: 0.45
+X_train_pca_shape: (199, 100)
+> test set accuracy: 0.40
+
+Process finished with exit code 0

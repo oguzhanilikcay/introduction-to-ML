@@ -1,0 +1,13 @@
+train set accuracy: 0.94
+test set accuracy: 0.92
+---------- compare different parameters ----------
+train set accuracy(n): 0.995
+test set accuracy(n): 0.972
+train set accuracy(max_iter=1000): 1.000
+test set accuracy(max_iter=1000): 0.972
+train set accuracy(alpha=1): 0.988
+test set accuracy(alpha=1): 0.972
+train set accuracy(max_iter=1000, alpha=1): 0.988
+test set accuracy(max_iter=1000, alpha=1): 0.972
+
+Process finished with exit code 0

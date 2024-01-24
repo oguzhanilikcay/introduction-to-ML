@@ -1,0 +1,47 @@
+> lr.coef_: [0.39390555]
+> lr.intercept_: -0.03
+> Train score: 0.67
+> Test score: 0.66
+>> train score (lr): 0.78
+>> test score (lr): 0.73
+> Train score (ridge): 0.75
+> Test score (ridge): 0.72
+---------- Ridge Models with different alpha values ----------
+alpha value = 0.1
+train score: 0.77
+test score: 0.72
+------------------------------
+alpha value = 1
+train score: 0.75
+test score: 0.72
+------------------------------
+alpha value = 10
+train score: 0.73
+test score: 0.71
+------------------------------
+> Train score (lasso): 0.55
+> Test score (lasso): 0.61
+> number of features used: 2
+---------- Lasso Models with different alpha values ----------
+alpha value = 0.001
+train score: 0.75
+test score: 0.72
+number of features used: 14.00
+..............................
+alpha value = 0.01
+train score: 0.69
+test score: 0.68
+number of features used: 8.00
+..............................
+alpha value = 0.1
+train score: 0.67
+test score: 0.68
+number of features used: 5.00
+..............................
+alpha value = 1
+train score: 0.55
+test score: 0.61
+number of features used: 2.00
+..............................
+
+Process finished with exit code 0

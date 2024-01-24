@@ -1,0 +1,22 @@
+X_test.shape: (25, 2)
+Decision function shape: (25,)
+Decision function:
+[ 4.13592603 -1.70169917 -3.95106099 -3.62609552  4.28986642  3.66166081]
+Thresholded decision function:
+[ True False False False  True  True False  True  True  True False  True
+  True False  True False False False  True  True  True  True  True False
+ False]
+Predictions: ['red' 'blue' 'blue' 'blue' 'red' 'red' 'blue' 'red' 'red' 'red' 'blue'
+ 'red' 'red' 'blue' 'red' 'blue' 'blue' 'blue' 'red' 'red' 'red' 'red'
+ 'red' 'blue' 'blue']
+pred is equal to predictions: True
+Decision function minimum: -7.69 maximum: 4.29
+Shape of probabilities: (25, 2)
+Predicted probabilities:
+[[0.01573626 0.98426374]
+ [0.84575653 0.15424347]
+ [0.98112869 0.01887131]
+ [0.97407033 0.02592967]
+ [0.01352142 0.98647858]]
+
+Process finished with exit code 0

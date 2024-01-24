@@ -1,0 +1,6 @@
+train set accuracy: 0.96
+test set accuracy: 0.94
+scaled train set accuracy: 0.99
+scaled test set accuracy: 0.97
+
+Process finished with exit code 0

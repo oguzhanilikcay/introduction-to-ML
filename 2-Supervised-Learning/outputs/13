@@ -1,0 +1,34 @@
+Decision function shape: (38, 3)
+Decision function:
+[[-1.995715    0.04758267 -1.92720695]
+ [ 0.06146394 -1.90755736 -1.92793758]
+ [-1.99058203 -1.87637861  0.09686725]
+ [-1.995715    0.04758267 -1.92720695]
+ [-1.99730159 -0.13469108 -1.20341483]
+ [ 0.06146394 -1.90755736 -1.92793758]]
+argmax of decision function:
+[1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1
+ 0]
+predictions:
+[1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1
+ 0]
+predicted probabilities:
+[[0.10217718 0.78840034 0.10942248]
+ [0.78347147 0.10936745 0.10716108]
+ [0.09818072 0.11005864 0.79176065]
+ [0.10217718 0.78840034 0.10942248]
+ [0.10360005 0.66723901 0.22916094]
+ [0.78347147 0.10936745 0.10716108]]
+sum of predicted probabilities: [1. 1. 1. 1. 1. 1.]
+argmax of predicted probabilities:
+[1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1
+ 0]
+predictions:
+[1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1
+ 0]
+unique classes in training data: ['setosa' 'versicolor' 'virginica']
+predictions: ['versicolor' 'setosa' 'virginica' 'versicolor' 'versicolor' 'setosa'
+ 'versicolor' 'virginica' 'versicolor' 'versicolor']
+argmax of decision function: [1 0 2 1 1 0 1 2 1 1]
+argmax combined with classes_: ['versicolor' 'setosa' 'virginica' 'versicolor' 'versicolor' 'setosa'
+ 'versicolor' 'virginica' 'versicolor' 'versicolor']

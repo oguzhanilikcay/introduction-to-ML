@@ -1,0 +1,22 @@
+test score: 0.88
+cross-validation scores: [0.96666667 1.         0.93333333 0.96666667 1.        ]
+average cross-validation score: 0.97
+Iris labels:
+[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2
+ 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+ 2 2]
+cross-validation scores:
+[0. 0. 0.]
+cross-validation scores:
+[0.98 0.96 0.96]
+number of iterations:  150
+mean accuracy: 0.97
+cross-validation scores:
+[0.96       0.97333333 0.97333333 0.97333333 0.97333333 0.98666667
+ 0.96       0.96       0.96       0.93333333]
+cross-validation scores:
+[0.75       0.6        0.66666667]
+
+Process finished with exit code 0
