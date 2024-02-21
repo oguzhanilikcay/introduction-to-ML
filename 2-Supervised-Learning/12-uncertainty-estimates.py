@@ -46,6 +46,7 @@ print("Decision function minimum: {:.2f} maximum: {:.2f}".format(
 
 # plot decision boundary and decision function
 fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+
 mglearn.tools.plot_2d_separator(gbc, X, ax=axes[0], alpha=0.4, fill=True, cm=mglearn.cm2)
 score_image = mglearn.tools.plot_2d_scores(gbc, X, ax=axes[1], alpha=0.4, cm=mglearn.ReBl)
 

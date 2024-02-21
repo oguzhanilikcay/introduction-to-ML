@@ -22,7 +22,7 @@ iris_df = pd.DataFrame(X_train, columns=iris.feature_names)
 # create a scatter matrix from the dataframe
 grr = pdp.scatter_matrix(
     iris_df, c=y_train, figsize=(20, 20), marker='o',
-    hist_kwds={'bins': 20}, s=13, alpha=0.85, cmap=mglearn.cm3
+    hist_kwds={'bins': 20}, s=58, alpha=0.85, cmap=mglearn.cm3
 )
 
 plt.show()
@@ -46,6 +46,7 @@ plt.plot(X, y, 'o')
 plt.ylim(-3, 3)
 plt.xlabel('feature')
 plt.ylabel('target')
+
 plt.show()
 
 

@@ -64,6 +64,7 @@ plt.xlabel('n_neighbors')
 plt.ylabel('Accuracy')
 plt.title('Accuracy vs n_neighbors')
 plt.legend()
+
 plt.show()
 
 print("training accuracy: {}".format(training_accuracy))

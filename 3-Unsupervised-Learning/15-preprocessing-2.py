@@ -12,6 +12,7 @@ X_train, X_test = train_test_split(
 
 # plot the training and test sets
 fig, axes = plt.subplots(1, 3, figsize=(13, 4))
+
 axes[0].scatter(X_train[:, 0], X_train[:, 1],
                 c='blue', label='Training set', s=60)
 axes[0].scatter(X_test[:, 0], X_test[:, 1],

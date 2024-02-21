@@ -2,6 +2,8 @@ import mglearn
 import matplotlib.pyplot as plt
 import numpy as np
 
+
+# non-negative matrix factorization
 mglearn.plots.plot_nmf_illustration()
 plt.show()
 
@@ -26,7 +28,6 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
     X_people, y_people, stratify=y_people, random_state=0
 )
-
 
 
 mglearn.plots.plot_nmf_faces(X_train, X_test, image_shape)

@@ -42,29 +42,39 @@ print("best parameters: {}".format(best_parameters))
 mglearn.plots.plot_threefold_split()
 plt.show()
 
-from sklearn.svm import SVC
+'''
+(X_train, y_train) to build the model
+(X_test, y_test) to evaluate the performance
+(X_val, y_val) to select the parameters
 
-# split <data> into train+validation set and test set
+> any choices made based on the test set accuracy "leak" information from the test set into the
+model. Therefore, it is important to keep a seperate test set, which is only used for the final evaluation.
+> because we used the test data to adjust the parameters, we can no longer us it to assess how
+good the model is.
+> (train, test, val) =? (75, 15, 10)
+'''
+# split <data> into <train+validation> set and test set
 X_trainval, X_test, y_trainval, y_test = train_test_split(
-    iris.data, iris.target, random_state=0
+    iris.data, iris.target, random_state=0, test_size=0.18
 )
 
 # split <train+validation> set into <training and validation> sets
-X_train, X_valid, y_train, y_valid = train_test_split(
-    X_trainval, y_trainval, random_state=1
+X_train, X_val, y_train, y_val = train_test_split(
+    X_trainval, y_trainval, random_state=1, test_size=0.12
 )
 
 print("size of training set: {}\nsize of validation set: {}\nsize of test set: {}".format(
-    X_train.shape[0], X_valid.shape[0], X_test.shape[0]
+    X_train.shape[0], X_val.shape[0], X_test.shape[0]
 ))
 
 best_score = 0
 
 for gamma in C_gamma_list:
     for C in C_gamma_list:
+
         svm = SVC(gamma=gamma, C=C)
         svm.fit(X_train, y_train)
-        score = svm.score(X_valid, y_valid)
+        score = svm.score(X_val, y_val)
 
         if score > best_score:
             best_score = score
@@ -96,7 +106,9 @@ from sklearn.model_selection import cross_val_score
 
 for gamma in C_gamma_list:
     for C in C_gamma_list:
+
         svm = SVC(gamma=gamma, C=C)
+
         scores = cross_val_score(svm, X_trainval, y_trainval, cv=5)
         score = np.mean(scores)
 

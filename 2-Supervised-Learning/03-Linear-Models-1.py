@@ -38,6 +38,7 @@ sion model as before:
 #
 # Compare the linear models (OLS, Ridge, Lasso) - for dataset : extended_boston
 #
+
 cancer = load_breast_cancer()
 X = cancer.data
 y = cancer.target

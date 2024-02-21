@@ -24,11 +24,11 @@ print("test set accuracy: {:.3f}".format(dtc.score(X_test, y_test)))
 
 # analyzing decision trees
 from sklearn.tree import export_graphviz
-export_graphviz(dtc, out_file='../dtc.dot', class_names=['malignant', 'benign'],
+export_graphviz(dtc, out_file='../fo/dtc.dot', class_names=['malignant', 'benign'],
                 feature_names=cancer.feature_names, impurity=False, filled=True)
 
 # visulize the tree
-with open('../dtc.dot') as f:
+with open('../fo/dtc.dot') as f:
     dot_graph = f.read()
 
 import graphviz

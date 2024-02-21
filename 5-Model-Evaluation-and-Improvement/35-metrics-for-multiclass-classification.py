@@ -1,4 +1,8 @@
 import matplotlib.pyplot as plt
+import warnings
+from sklearn.exceptions import ConvergenceWarning
+
+warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
 
 from sklearn.datasets import load_digits
@@ -27,6 +31,7 @@ for gamma in [1, 0.05, 0.01]:
 
     print("<gamma = {:.2f}> <accuracy = {:.2f}> <AUC = {:.2f}>".format(gamma, accuracy, auc))
     plt.plot(fpr, tpr, label="gamma= {:.2f}".format(gamma))
+
 plt.xlabel("FPR")
 plt.ylabel("TPR")
 plt.xlim(-0.01, 1)

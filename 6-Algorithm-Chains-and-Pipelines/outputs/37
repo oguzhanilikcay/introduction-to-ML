@@ -1,0 +1,9 @@
+best parameters: {'polynomialfeatures__degree': 2, 'ridge__alpha': 10}
+test set score: 0.77
+test score without polynomial features: 0.63
+best params:
+{'classifier': SVC(), 'classifier__C': 10, 'classifier__gamma': 0.01, 'preprocessing': StandardScaler()}
+best cross-validation score: 0.99
+test score: 0.98
+
+Process finished with exit code 0
